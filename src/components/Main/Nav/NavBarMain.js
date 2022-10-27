@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Image from '../../image/attendit-4.png'
-import './Navbar.css';
+import Image from '../../../image/attendit-4.png';
+import './NavBarMain.css';
 
-class Navbar extends React.Component {
+class NavBarMain extends React.Component {
   state = { clicked: false };
   handleClick = () => {
     this.setState({ clicked: !this.state.clicked });
@@ -12,8 +12,8 @@ class Navbar extends React.Component {
     return (
       <>
         <nav>
-          <a href="/">
-            <img src={Image} alt="AttendIt" width="170vh" />
+          <a href="/user-home">
+            <img src={Image} alt="AttendIt" width="180vh" />
           </a>
 
           <div>
@@ -22,11 +22,11 @@ class Navbar extends React.Component {
               className={this.state.clicked ? '#navbar active' : '#navbar'}
             >
               <li>
-              <NavLink className="activenav" to="/Sign_Up">Sign Up</NavLink>
+              <NavLink to='/user-home-aboutMe'>About Me</NavLink>
               </li>
 
               <li>
-              <NavLink className="activenav" to="/">Log In</NavLink>
+              <NavLink to="/" >Log Out</NavLink>
               </li>
             </ul>
           </div>
@@ -43,4 +43,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default NavBarMain;

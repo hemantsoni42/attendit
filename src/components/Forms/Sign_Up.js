@@ -5,6 +5,8 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import SIGNUP from '../../image/sign_up.png';
 import './form.css';
 import Navbar from '../NavBar/Navbar';
+import Card from 'react-bootstrap/Card';
+import CardHeader from 'react-bootstrap/esm/CardHeader';
 
 const SignUp = () => {
 
@@ -59,10 +61,15 @@ const SignUp = () => {
     <Navbar/>
       <div className="container">
         <section className="d-flex justify-content-between">
-          <div className="left_data mt-2" style={{ width: '100%' }}>
-            <h3 className="text-center col-lg-6 mt-4">Sign Up</h3>
+          <div className="left_data mt-3" style={{ width: '100%' }}>
+            {/* <h3 className="text-center col-lg-6 mt-4">Sign Up</h3> */}
+            <Card className="shadow-lg position-static ">
+            <CardHeader className="text-center p-3">
+              Sign Up
+            </CardHeader>
+            <Card.Body>
             <Form>
-              <Form.Group className="mb-2 col-lg-6" controlId="formBasicName">
+              <Form.Group className="mb-2" controlId="formBasicName">
                 <Form.Label className="mt-2">Name</Form.Label>
                 <Form.Control
                   type="text"
@@ -73,7 +80,7 @@ const SignUp = () => {
               </Form.Group>
 
               <Form.Group
-                className="mb-2 col-lg-6"
+                className="mb-2"
                 controlId="formBasicRoll_No"
               >
                 <Form.Label className="mt-2">Roll Number</Form.Label>
@@ -85,7 +92,7 @@ const SignUp = () => {
                 />
               </Form.Group>
 
-              <Form.Group className="mb-2 col-lg-6" controlId="formBasicEmail">
+              <Form.Group className="mb-2" controlId="formBasicEmail">
                 <Form.Label className="mt-2">Email</Form.Label>
                 <Form.Control
                   type="email"
@@ -96,7 +103,7 @@ const SignUp = () => {
               </Form.Group>
 
               <Form.Group
-                className="mb-2 col-lg-6"
+                className="mb-2 "
                 controlId="formBasicPassword"
               >
                 <Form.Label className="mt-2">Password</Form.Label>
@@ -109,7 +116,7 @@ const SignUp = () => {
               </Form.Group>
 
               <Form.Group
-                className="mb-2 col-lg-6"
+                className="mb-2"
                 controlId="formBasicConfirmPassword"
               >
                 <Form.Label className="mt-2">Confirm Password</Form.Label>
@@ -121,7 +128,7 @@ const SignUp = () => {
                 />
               </Form.Group>
               <Button
-                className="col-lg-6"
+                className="col-lg-12"
                 style={{ backgroundColor: '#4649ee' }}
                 onClick={addData}
                 variant="primary"
@@ -130,6 +137,8 @@ const SignUp = () => {
                 Submit
               </Button>
             </Form>
+            </Card.Body>
+          </Card>
             <p className='mt-3'>
               Already have an account. <NavLink to="/">Log In</NavLink>
             </p>

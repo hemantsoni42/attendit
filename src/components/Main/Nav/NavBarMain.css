@@ -45,7 +45,7 @@ nav{
 
 #mobile{
     display: none;
-}
+} 
 
 #mobile i{
     color: #ffffff;
@@ -85,5 +85,18 @@ nav{
     #mobile i{
         font-size: 24px;
         cursor: pointer;
+    }
+    #navbar li a:hover{
+        color: aqua;
+    }
+    
+    #navbar li a:hover::after{
+        content: '';
+        width: 30%;
+        height:2px;
+        background-color: aqua;
+        position: absolute;
+        bottom: -4px;
+        left: 20px;
     }
 }
