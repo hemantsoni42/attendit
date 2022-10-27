@@ -66,7 +66,7 @@ const LoginForm = () => {
 
           <Card className="shadow-lg position-static ">
             <CardHeader className="text-center p-3">
-              Log In here
+              Log In here soooorhuvbuydbuyvgebsydcvfcdh
             </CardHeader>
             <Card.Body>
               <Form>
