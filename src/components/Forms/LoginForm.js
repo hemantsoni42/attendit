@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import LOGIN from '../../image/login.webp';
 import './form.css';
 import { useState } from 'react';
+import Navbar from '../NavBar/Navbar';
 
 const LoginForm = () => {
   
@@ -50,14 +51,16 @@ const LoginForm = () => {
         {
           alert("invalid user");
         }else{
-          history('/home');
+          history('/user-home');
         }
       }
     }
   };
 
   return (
+
     <>
+      <Navbar/>
       <div className="container">
         <section className="d-flex justify-content-between">
           <div className="left_data mt-5" style={{ width: '100%' }}>

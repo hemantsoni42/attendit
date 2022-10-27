@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { NavLink, useNavigate } from 'react-router-dom';
 import SIGNUP from '../../image/sign_up.png';
 import './form.css';
+import Navbar from '../NavBar/Navbar';
 
 const SignUp = () => {
 
@@ -55,6 +56,7 @@ const SignUp = () => {
 
   return (
     <>
+    <Navbar/>
       <div className="container">
         <section className="d-flex justify-content-between">
           <div className="left_data mt-2" style={{ width: '100%' }}>
