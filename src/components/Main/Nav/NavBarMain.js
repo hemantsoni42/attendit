@@ -1,14 +1,19 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React , {useState} from 'react';
+import { NavLink , useNavigate } from 'react-router-dom';
 import Image from '../../../image/attendit-4.png';
 import './NavBarMain.css';
 
-class NavBarMain extends React.Component {
-  state = { clicked: false };
-  handleClick = () => {
-    this.setState({ clicked: !this.state.clicked });
+export default function NavBarMain() {
+  const history = useNavigate();
+  const [state, setState] = useState(false);
+  const handleClick = () => {
+    setState(current => !current);
   };
-  render() {
+
+  const handleLogOut = () => {
+    history('/', { replace: true });
+  }
+
     return (
       <>
         <nav>
@@ -19,28 +24,31 @@ class NavBarMain extends React.Component {
           <div>
             <ul
               id="navbar"
-              className={this.state.clicked ? '#navbar active' : '#navbar'}
+              className={state ? '#navbar active' : '#navbar'}
             >
               <li>
-              <NavLink to='/user-home-aboutMe'>About Me</NavLink>
+                <NavLink to="/user-home">Home</NavLink>
               </li>
 
               <li>
-              <NavLink to="/" >Log Out</NavLink>
+                <NavLink to="/user-home-aboutMe">About Me</NavLink>
+              </li>
+
+              <li>
+                <NavLink to="/" onClick={handleLogOut}>Log out</NavLink>
               </li>
             </ul>
           </div>
 
-          <div id="mobile" onClick={() => this.handleClick()}>
+          <div id="mobile" onClick={() => handleClick()}>
             <i
               id="bar"
-              className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}
+              className={state ? 'fas fa-times' : 'fas fa-bars'}
             ></i>
           </div>
         </nav>
       </>
     );
-  }
+  
 }
 
-export default NavBarMain;

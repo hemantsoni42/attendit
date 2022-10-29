@@ -11,10 +11,10 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path='/' element = {<LoginForm/>}/> 
-        <Route path='/Sign_Up' element={<SignUp/>}/>
-        <Route path='/user-home' element={<NavBar/>}/>
-        <Route path='/user-home-aboutMe' element={<AboutMe/>}/>
+        <Route exact path='/' element = {<LoginForm/>}/> 
+        <Route exact path='/Sign_Up' element={<SignUp/>}/>
+        <Route exact path='/user-home' element={<NavBar/>}/>
+        <Route exact path='/user-home-aboutMe' element={<AboutMe/>}/>
       </Routes>
     </div>
   );

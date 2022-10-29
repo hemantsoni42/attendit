@@ -21,6 +21,13 @@ nav{
     position: relative;
 }
 
+#navbar li p{
+    font-size:3vh;
+    font-weight: 600;
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+}
+
 #navbar li a{
     text-decoration: none;
     font-size:3vh;
